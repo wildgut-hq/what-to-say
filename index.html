@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>WildGut — What To Say</title>
+<style>
+  :root{
+    --ink:#2a1f1a;
+    --paper:#faf7f3;
+    --surface:#ffffff;
+    --warm:#fff5ee;
+    --border:#e5ddd6;
+    --muted:#9b8a7e;
+    --dark-muted:#6b5b4f;
+    --orange:#d15838;
+    --green:#4caf50;
+    --green-light:#f0f8f2;
+    --green-deep:#3d8b41;
+    --warn:#92640a;
+    --warn-light:#fef9ee;
+
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,"Cascadia Mono",monospace;
+
+    --maxw:920px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    font-size:17px;
+    padding:0 20px 100px;
+  }
+  .col{max-width:var(--maxw);margin:0 auto;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 44px;border-bottom:1px solid var(--border);}
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(38px,7vw,62px);
+    line-height:1.03;
+    letter-spacing:-0.02em;
+    margin:18px 0 0;
+    text-wrap:balance;
+  }
+  .hero h1 em{color:var(--orange);font-style:italic;}
+  .thesis{
+    font-family:var(--serif);
+    font-size:clamp(19px,2.6vw,23px);
+    line-height:1.45;
+    font-style:italic;
+    color:#4a3a30;
+    max-width:36ch;
+    margin:24px 0 0;
+    text-wrap:pretty;
+  }
+  .note{margin-top:30px;font-size:14.5px;color:var(--muted);max-width:62ch;line-height:1.55;}
+
+  /* ---------- the two rules ---------- */
+  .rules{
+    margin:44px 0 0;
+    background:var(--warn-light);
+    border:1px solid #e8d9b8;
+    border-left:3px solid var(--warn);
+    border-radius:0 10px 10px 0;
+    padding:26px 28px 28px;
+  }
+  .rules .eyebrow{color:var(--warn);}
+  .rules h2{font-family:var(--serif);font-weight:400;font-size:25px;margin:10px 0 14px;}
+  .rules ol{margin:0;padding-left:22px;}
+  .rules li{margin:12px 0;max-width:62ch;}
+  .rules li b{font-weight:600;}
+
+  /* ---------- sections ---------- */
+  section{padding-top:64px;}
+  section > .eyebrow{margin-bottom:10px;}
+  h2.sec{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(26px,4vw,34px);line-height:1.15;
+    letter-spacing:-0.01em;margin:0 0 10px;text-wrap:balance;
+  }
+  .lede{color:var(--dark-muted);max-width:64ch;margin:0 0 26px;font-size:16px;}
+
+  /* ---------- say/dont table ---------- */
+  .tablewrap{
+    overflow-x:auto;border:1px solid var(--border);border-radius:10px;
+    background:var(--surface);
+  }
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;}
+  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+  thead th{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--ink);
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.no{color:var(--orange);}
+  td.no s{text-decoration-color:rgba(209,88,56,.45);}
+  td.yes{font-weight:500;}
+  td.why{color:var(--muted);font-size:14px;}
+
+  /* ---------- accordions ---------- */
+  .qgroup{margin-bottom:34px;}
+  .qgroup h3{
+    font-family:var(--mono);font-size:11.5px;font-weight:400;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--border);
+  }
+  details{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:9px;
+    overflow:hidden;
+  }
+  details[open]{border-color:#d8cec4;}
+  summary{
+    cursor:pointer;
+    padding:15px 46px 15px 18px;
+    font-weight:600;
+    font-size:16px;
+    position:relative;
+    list-style:none;
+    line-height:1.4;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    position:absolute;right:18px;top:50%;transform:translateY(-50%);
+    font-family:var(--mono);font-size:19px;font-weight:400;color:var(--orange);
+    line-height:1;
+  }
+  details[open] summary::after{content:"\2013";}
+  summary:hover{background:var(--warm);}
+  summary:focus-visible{outline:2px solid var(--orange);outline-offset:-2px;}
+  .body{padding:2px 18px 18px;font-size:15.5px;}
+  .body p{margin:0 0 12px;max-width:64ch;}
+  .body p:last-child{margin-bottom:0;}
+  .say{
+    background:var(--green-light);
+    border-left:2px solid var(--green);
+    padding:12px 15px;
+    border-radius:0 7px 7px 0;
+    margin:0 0 13px;
+  }
+  .say .lbl{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--green-deep);display:block;margin-bottom:6px;
+  }
+  .say p{margin:0;font-style:italic;color:#2f4a32;}
+  .flag{
+    background:var(--warn-light);border-left:2px solid var(--warn);
+    padding:11px 15px;border-radius:0 7px 7px 0;margin:13px 0 0;
+    font-size:14.5px;color:#6b4e12;
+  }
+  .flag b{color:var(--warn);}
+
+  /* ---------- escalate ---------- */
+  .stop{
+    background:var(--ink);color:#f3ebe4;
+    border-radius:12px;padding:30px 30px 32px;margin-top:8px;
+  }
+  .stop .eyebrow{color:#b9a596;}
+  .stop h2{font-family:var(--serif);font-weight:400;font-size:27px;margin:10px 0 14px;color:#fff;}
+  .stop ul{margin:0;padding-left:21px;}
+  .stop li{margin:11px 0;max-width:62ch;color:#e6dbd2;}
+  .stop .line{
+    margin-top:22px;padding-top:20px;border-top:1px solid #4a3a30;
+    font-size:15px;color:#cbbcaf;
+  }
+  .stop a{color:#f0a58c;}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--border);}
+  footer p{font-size:13.5px;color:var(--muted);max-width:66ch;margin:9px 0;line-height:1.55;}
+
+  @media (max-width:560px){
+    body{font-size:16px;padding:0 16px 70px;}
+    .hero{padding:52px 0 34px;}
+    .rules{padding:22px 20px 24px;}
+    .stop{padding:24px 22px 26px;}
+    summary{padding:14px 42px 14px 15px;font-size:15.5px;}
+    .body{padding:2px 15px 16px;}
+  }
+
+  @media print{
+    body{background:#fff;font-size:11pt;padding:0;}
+    details{break-inside:avoid;border-color:#ccc;}
+    details .body{display:block !important;}
+    summary::after{display:none;}
+    .stop{background:#fff;color:#000;border:1.5px solid #000;}
+    .stop h2,.stop li,.stop .line,.stop .eyebrow{color:#000;}
+    section{padding-top:26pt;}
+  }
+</style>
+</head>
+<body>
+
+<div class="col">
+
+  <div class="hero">
+    <p class="eyebrow">WildGut · Creator Reference</p>
+    <h1>What to say when<br>someone <em>asks</em>.</h1>
+    <p class="thesis">Your comments will fill up with health questions. Here is what you can answer, and what you hand to us.</p>
+    <p class="note">Built for the questions that actually turn up: medication, pregnancy, whether it is a laxative, how long it takes. Open the one you need. You are not expected to read this end to end.</p>
+    <p class="note"><b>Last updated 10 September 2026.</b> Anything not covered here, message Humza. Never guess on a health question.</p>
+  </div>
+
+  <div class="rules">
+    <p class="eyebrow">Read this bit</p>
+    <h2>The two rules everything else follows from</h2>
+    <ol>
+      <li><b>You are not the person who decides if it is safe for someone else.</b> Not for their medication, not for their condition, not for their pregnancy. The answer is always that they check with their GP or pharmacist. Saying so makes you the trustworthy one, not the unhelpful one.</li>
+      <li><b>Never tell anyone to change, stop or skip something a doctor gave them.</b> Not in a video, not in a comment, not in a DM. No exceptions, no matter how the question is phrased.</li>
+    </ol>
+  </div>
+
+  <section>
+    <p class="eyebrow">The core of it</p>
+    <h2 class="sec">Say this, not that</h2>
+    <p class="lede">Most videos that get pulled are pulled over a handful of words. Swapping them costs you nothing and keeps your account clean.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Don't say</th><th>Say instead</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no"><s>It fixes it</s> · <s>cures</s> · <s>treats</s> · <s>heals</s></td>
+            <td class="yes">"It supports my digestion" · "it keeps me moving" · "it helps me stay regular"</td>
+            <td class="why">Those are medical claims. We support, we do not treat.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>It helped me lose weight</s></td>
+            <td class="yes">Leave weight out of it. The story is comfort and being regular.</td>
+            <td class="why">This is the single biggest cause of violations on our product. See the last section.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>Clinically proven</s></td>
+            <td class="yes">"The ingredients are backed by research"</td>
+            <td class="why">We cannot say the finished product is clinically proven.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>Detox</s> · <s>cleanse</s> · <s>flush</s></td>
+            <td class="yes">"Support" · "keep things moving"</td>
+            <td class="why">Banned for us. It is also the language that dates the product.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>It's safe with your medication</s></td>
+            <td class="yes">"Check with your prescriber or pharmacist before adding anything new"</td>
+            <td class="why">You cannot make a safety call on someone else's prescription. Do not take that on.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>My gut journey</s></td>
+            <td class="yes">Just say what happened.</td>
+            <td class="why">"Journey" is a banned word across everything WildGut.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>Ozempic</s> · <s>Wegovy</s> · <s>Mounjaro</s></td>
+            <td class="yes">"my GLP-1" · "the injection" · "weight loss injection"</td>
+            <td class="why">Brand drug names get flagged and rejected automatically.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>Kilos of waste</s> · <s>pounds of build-up</s></td>
+            <td class="yes">"Backed up" · "things weren't moving" · "felt heavy"</td>
+            <td class="why">Old creator language from before the rename. It reads as a weight claim.</td>
+          </tr>
+          <tr>
+            <td class="no"><s>14 day cleanse</s> · <s>a course</s> · <s>finish the pack and you're done</s></td>
+            <td class="yes">"It's a daily habit"</td>
+            <td class="why">There is no finish line. People stay on it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Open the one you need</p>
+    <h2 class="sec">When a follower asks you&hellip;</h2>
+    <p class="lede">Answers you can use as written. The green box is a reply you can paste straight into a comment.</p>
+
+    <div class="qgroup">
+      <h3>Health and safety</h3>
+
+      <details>
+        <summary>"I take [medication]. Can I take this?"</summary>
+        <div class="body">
+          <p>This is the most common one you will get, and it will usually arrive with a long list of medications attached. You do not answer it.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>It's plant based rather than a drug, but I'm honestly not the right person to make that call for you. Have a quick word with your GP or pharmacist before you add anything new. Mine was fine with it.</p>
+          </div>
+          <p>You can say your own prescriber was fine with it, if that is true for you. You cannot extend that to them. Do not name their medication back to them and do not look anything up for them.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>"I'm pregnant" or "I'm breastfeeding"</summary>
+        <div class="body">
+          <p>This one has a clear answer, and it is a no. Colon Reset contains plant extracts that are not suitable during pregnancy or breastfeeding. Our own quiz screens people out at this question, so you are safe to say it plainly.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Not this one, sorry. It's got plant extracts in it that aren't suitable while you're pregnant or breastfeeding. Worth coming back to it after.</p>
+          </div>
+          <p>Keep it warm and short. Do not list ingredients or explain the reasons, and do not make her feel there is something wrong with her for asking.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>"I have IBS" or "I have [a condition]"</summary>
+        <div class="body">
+          <p>Treat every named condition the same way, whether it is IBS, Crohn's, colitis, diverticulitis or anything after bowel surgery. You are not qualified to clear any of them and you should not try.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>With anything diagnosed I'd always check with your GP first rather than take my word for it. They know your history and I don't.</p>
+          </div>
+          <div class="flag"><b>Do not</b> say it is fine for IBS, and do not say it helps IBS. Both are medical claims.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Can my teenager take it?" or "What age is it for?"</summary>
+        <div class="body">
+          <p>Adults. Do not recommend it for anyone under 18.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>It's one for adults. For anyone younger I'd speak to a GP rather than a supplement.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Are there side effects?"</summary>
+        <div class="body">
+          <p>Be honest here. It buys you more trust than dodging it does, and people find out anyway.</p>
+          <p>There can be some digestive activity in the first day or two while things start moving. Frame it as normal, and tell people to keep their water up.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Things can feel a bit more active for the first day or two while it gets going. That settles. Just keep your water up, it makes a real difference.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qgroup">
+      <h3>How it works</h3>
+
+      <details>
+        <summary>"Is it a laxative?"</summary>
+        <div class="body">
+          <p>No, and this distinction is worth getting right because it is our main advantage over the cheap stuff.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>No. It's a daily plant based capsule, and it supports movement rather than forcing it. That's the whole reason there's no urgency with it.</p>
+          </div>
+          <p>If they follow up with "can I just use a laxative instead", send them to their pharmacist rather than talking them out of it.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Will it make me run to the loo?"</summary>
+        <div class="body">
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>No, and that's exactly why I use it. It's gentle, no urgency and no cramping, which matters a lot when you've got a sensitive stomach already.</p>
+          </div>
+          <p>"No urgency, no cramps" is real customer language and it lands better than anything you could polish.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>"How many do I take?"</summary>
+        <div class="body">
+          <p>Start on one a day. If you are not feeling much, add a second. For everyday long term use one a day is plenty.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Start with one a day and give it a few days. If you're not feeling much, go up to two. Long term I'm back to just the one.</p>
+          </div>
+          <div class="flag"><b>Updated 10 Sept.</b> We used to say two a day. It is now start on one. If you have older videos saying two, no need to delete them, just use the new line going forward.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"How long until it works?"</summary>
+        <div class="body">
+          <p>Most people notice something in the first day or two. Proper consistency takes a few weeks.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>I noticed something in the first couple of days. Feeling properly regular took me a few weeks though, it's not an overnight thing.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Can I take it forever?"</summary>
+        <div class="body">
+          <p>Yes. It is built as a daily habit, not a course, and this is the answer that protects your repeat commission.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Yes, it's made as a daily thing rather than a course. I've been on it ongoing.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"What's actually in it?"</summary>
+        <div class="body">
+          <p>Eleven plant ingredients, 60 vegan capsules, made in the UK under GMP standards.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Eleven plant ingredients, all vegan, and it's made here in the UK. Happy to go through them if you want the full list.</p>
+          </div>
+          <div class="flag"><b>Need the full list?</b> Ask Humza and he will email it over. Do not work it off an old video or an old pack, some of those show the wrong ingredient count.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Is it vegan? Gluten free?"</summary>
+        <div class="body">
+          <p>Vegan, yes. It is 60 vegan capsules, all plant ingredients, made in the UK under GMP standards.</p>
+          <div class="flag"><b>Anything else on allergens</b>, including gluten, dairy and specific intolerances, check with Humza before you answer. Do not assume from the ingredient list.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qgroup">
+      <h3>The awkward ones</h3>
+
+      <details>
+        <summary>"Does it help you lose weight?"</summary>
+        <div class="body">
+          <p>This is the question that gets accounts restricted. It will come up constantly. The answer is always no.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>That's not what it's for. It's about not feeling backed up and bloated, that's it.</p>
+          </div>
+          <div class="flag"><b>Do not</b> hint, joke or wink at it either. Not "well, I did notice my jeans fitting". That reads exactly the same to the system as saying it outright.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"I'm on a weight loss injection"</summary>
+        <div class="body">
+          <p>Good conversation to have, and a big part of our audience. The injection slows your stomach down on purpose, which is how it kills your appetite, but it slows the rest of your gut too. So everything sits longer and dries out.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Yeah, the injection slows your stomach down on purpose, that's how it works. Trouble is it slows everything below it too. That's the bit nobody warns you about.</p>
+          </div>
+          <p>Never use the brand names. "My GLP-1" or "the injection" only. Still send them to their prescriber before they add anything.</p>
+          <div class="flag"><b>There's a full GLP-1 briefing doc</b> with the approved stats and sources. Ask Humza for it before you make a video specifically on this.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>"How much do you get paid for this?"</summary>
+        <div class="body">
+          <p>Answer it honestly and it defuses. Getting cagey is what makes people suspicious.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>I get a commission if someone buys through my link, and I'd only ever put my name to something I actually use. This one I genuinely do.</p>
+          </div>
+          <p>Keep your paid partnership disclosure on. It protects you and it does not cost you conversion.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>"Is this a scam?" or "does it actually work?"</summary>
+        <div class="body">
+          <p>Do not get defensive and do not argue in the replies. Answer once, with your own experience, and move on.</p>
+          <div class="say">
+            <span class="lbl">Reply you can paste</span>
+            <p>Fair question, there's a lot of rubbish out there. All I can tell you is what it did for me. Made in the UK, plant based, and there are a few thousand reviews if you want to read other people's rather than mine.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Hand it over</p>
+    <div class="stop">
+      <p class="eyebrow">Stop answering and send it to us</p>
+      <h2>When to stop and escalate</h2>
+      <ul>
+        <li>Someone describes <b>severe pain, vomiting, blood, or not having gone for over a week.</b> Tell them to speak to their GP or pharmacist. Do not recommend the product into that.</li>
+        <li>Someone asks whether they should <b>stay on or come off a prescription.</b> Not your call and not ours.</li>
+        <li>Anyone mentions a <b>reaction they think came from the product.</b> Send it straight to us, same day.</li>
+        <li>A question about <b>allergens or an interaction</b> that you cannot answer from this page.</li>
+        <li>You get a <b>violation you do not think you deserved.</b> We have a TikTok Shop rep who can look at your account and get it overturned.</li>
+      </ul>
+      <div class="line">
+        Message Humza directly on WhatsApp for anything urgent, or email <a href="mailto:support@wildgut.co.uk">support@wildgut.co.uk</a>. Better to ask and wait than to guess in a comment.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Background</p>
+    <h2 class="sec">Why videos get pulled, and what changed</h2>
+    <p class="lede">Worth knowing so the rules above make sense rather than feeling arbitrary.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>What happened</th><th>What it means for you</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>The product used to be called a <b>14 day colon cleanse</b>. Creators started making weight loss content off their own backs, at scale, and TikTok began handing out violations.</td>
+            <td>Weight loss framing is the one thing most likely to cost you your account on this product. It is not a rule we invented, it is the one that nearly got the product taken down.</td>
+          </tr>
+          <tr>
+            <td>We renamed it <b>Colon Reset</b> and stopped putting ad spend behind any video that talks about weight.</td>
+            <td>Videos that mention weight will not get boosted, so you lose the ad-driven commission on them as well as risking the violation.</td>
+          </tr>
+          <tr>
+            <td>We now work with a much smaller, selected group of creators instead of mass sending samples.</td>
+            <td>Violations across our retained creators are now very low. Sticking to this page is most of the reason.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Last updated 10 September 2026.</b> This page is background information for creators working with WildGut. It is not medical advice.</p>
+    <p>Anyone on prescription medication, pregnant, breastfeeding, or managing a diagnosed condition should speak to their GP or pharmacist before adding a supplement.</p>
+    <p>WildGut is a registered trading name of Alpine Ventures Limited.</p>
+  </footer>
+
+</div>
+</body>
+</html>
