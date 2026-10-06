@@ -173,6 +173,35 @@
   }
   .flag b{color:var(--warn);}
 
+  /* ---------- ingredients ---------- */
+  .ing-label{
+    font-family:var(--mono);font-size:11.5px;font-weight:400;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--border);
+  }
+  .ing-grid{display:grid;gap:10px;margin-bottom:30px;}
+  .ing-grid.hero3{grid-template-columns:repeat(3,1fr);}
+  .ing-grid.rest{grid-template-columns:repeat(2,1fr);}
+  .ing{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:16px 18px 17px;
+  }
+  .ing-grid.hero3 .ing{background:var(--warm);border-top:3px solid var(--orange);}
+  .ing h4{font-size:16.5px;font-weight:600;margin:0;line-height:1.3;}
+  .ing .part{font-size:13px;color:var(--muted);margin:2px 0 9px;}
+  .ing .job{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--orange);margin:0 0 6px;}
+  .ing p{margin:0;font-size:15px;line-height:1.55;}
+  .ing-grid.rest .job{margin-top:4px;}
+  #ingredients details{margin-bottom:12px;}
+  .ing-sum{max-width:64ch;margin:0 0 18px;font-size:16px;}
+
+  @media (max-width:760px){
+    .ing-grid.hero3{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .ing-grid.rest{grid-template-columns:1fr;}
+  }
+
   /* ---------- escalate ---------- */
   .stop{
     background:var(--ink);color:#f3ebe4;
@@ -221,7 +250,7 @@
     <h1>What to say when<br>someone <em>asks</em>.</h1>
     <p class="thesis">Your comments will fill up with health questions. Here is what you can answer, and what you hand to us.</p>
     <p class="note">Built for the questions that actually turn up: medication, pregnancy, whether it is a laxative, how long it takes. Open the one you need. You are not expected to read this end to end.</p>
-    <p class="note"><b>Last updated 10 September 2026.</b> Anything not covered here, message Humza. Never guess on a health question.</p>
+    <p class="note"><b>Last updated 6 October 2026.</b> Anything not covered here, message Humza. Never guess on a health question.</p>
   </div>
 
   <div class="rules">
@@ -424,12 +453,12 @@
       <details>
         <summary>"What's actually in it?"</summary>
         <div class="body">
-          <p>Eleven plant ingredients, 60 vegan capsules, made in the UK under GMP standards.</p>
+          <p>Eleven plant ingredients, 60 vegan capsules, made in the UK under GMP standards. The core ingredients and what each one does are in <a href="#ingredients">the ingredients section</a> further down.</p>
           <div class="say">
             <span class="lbl">Reply you can paste</span>
-            <p>Eleven plant ingredients, all vegan, and it's made here in the UK. Happy to go through them if you want the full list.</p>
+            <p>Eleven plant ingredients, all vegan, and it's made here in the UK. The main ones are rhubarb, glucomannan and aloe vera. They work together to keep things moving gently.</p>
           </div>
-          <div class="flag"><b>Need the full list?</b> Ask Humza and he will email it over. Do not work it off an old video or an old pack, some of those show the wrong ingredient count.</div>
+          <div class="flag"><b>Go by this page,</b> not an old video or an old pack. Some of those show the wrong ingredient count.</div>
         </div>
       </details>
 
@@ -495,6 +524,88 @@
     </div>
   </section>
 
+  <section id="ingredients">
+    <p class="eyebrow">What's in it</p>
+    <h2 class="sec">The ingredients, and what each one does</h2>
+    <p class="lede">Colon Reset has eleven plant ingredients. These are the core ones. This is here so you understand the product and can explain it in your own words when someone asks. You do not need to list them in your videos.</p>
+
+    <p class="ing-sum"><b>The short version:</b> rhubarb gets your gut muscles moving, glucomannan keeps things soft, and aloe vera keeps it comfortable. The rest help digestion along and feed the good bacteria in your gut.</p>
+
+    <p class="ing-label">The three that do the heavy lifting</p>
+    <div class="ing-grid hero3">
+      <div class="ing">
+        <h4>Rhubarb</h4>
+        <p class="part">Root extract</p>
+        <p class="job">Gets things moving</p>
+        <p>Rhubarb root has natural plant compounds that gently prompt the muscles in your gut wall to squeeze. That squeezing is called peristalsis. It is how your gut pushes waste along.</p>
+      </div>
+      <div class="ing">
+        <h4>Glucomannan</h4>
+        <p class="part">Fibre from konjac root</p>
+        <p class="job">Keeps things soft</p>
+        <p>A fibre that soaks up water in your gut and turns into a soft gel. Waste that sits too long dries out and gets hard to pass. This keeps it softer, so it moves through easier.</p>
+      </div>
+      <div class="ing">
+        <h4>Aloe vera</h4>
+        <p class="part">Leaf</p>
+        <p class="job">Keeps it comfortable</p>
+        <p>Used for centuries to soothe the gut. It helps things pass through comfortably, rather than being forced. It is a big part of why there is no rush to the loo.</p>
+      </div>
+    </div>
+
+    <p class="ing-label">The supporting ingredients</p>
+    <div class="ing-grid rest">
+      <div class="ing">
+        <h4>Sugar beet fibre</h4>
+        <p class="job">Adds bulk, feeds good bacteria</p>
+        <p>A natural fibre that gives your gut something to work with. Part of it also feeds the good bacteria that live in your gut.</p>
+      </div>
+      <div class="ing">
+        <h4>Ginger root</h4>
+        <p class="job">Helps digestion along</p>
+        <p>Helps food move on from your stomach. A long-time favourite for easing bloating and wind.</p>
+      </div>
+      <div class="ing">
+        <h4>Dandelion root</h4>
+        <p class="job">Feeds the good bacteria</p>
+        <p>Naturally rich in inulin, a fibre your good gut bacteria feed on. Used for generations to support digestion.</p>
+      </div>
+      <div class="ing">
+        <h4>Cayenne pepper</h4>
+        <p class="job">A warm kick for digestion</p>
+        <p>Its heat comes from capsaicin, which is thought to help wake up digestion. The amount is small. You won't taste it.</p>
+      </div>
+      <div class="ing">
+        <h4>Barberry bark</h4>
+        <p class="job">Supports the gut's rhythm</p>
+        <p>Contains a plant compound called berberine. Used for a long time in herbal blends to support digestion and the gut's natural movement.</p>
+      </div>
+      <div class="ing">
+        <h4>Nettle leaf</h4>
+        <p class="job">A traditional all-rounder</p>
+        <p>A herb packed with minerals. It has been part of traditional digestive blends for generations.</p>
+      </div>
+      <div class="ing">
+        <h4>Black garlic</h4>
+        <p class="job">Garlic, made gentle</p>
+        <p>Garlic that is slowly aged until it turns black and sweet. Much gentler on the stomach than raw garlic, and rich in antioxidants.</p>
+      </div>
+    </div>
+
+    <details>
+      <summary>"How does it actually help with bloating?"</summary>
+      <div class="body">
+        <p>This comes up a lot. A lot of bloating comes from being backed up. When waste sits in your gut too long, it makes more gas. So you are not just bloated in your stomach, you are bloated lower down too. Get things moving and that eases off.</p>
+        <div class="say">
+          <span class="lbl">Reply you can paste</span>
+          <p>For me a lot of the bloating was being backed up. When things sit there too long they make more gas. The rhubarb in it gets things moving, the glucomannan keeps it soft, and the aloe keeps it comfortable. So I just go more regularly, no rush, and I wake up feeling flatter.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="flag"><b>When you talk about ingredients,</b> say what they do in your gut, never what they treat. Do not say any ingredient fixes constipation, IBS or anything else. And never link glucomannan to weight. Other brands sell it as a weight loss fibre, and that is exactly the claim that gets videos pulled. If someone asks whether one ingredient is okay with their medication, it is the same answer as always: their GP or pharmacist.</div>
+  </section>
+
   <section>
     <p class="eyebrow">Hand it over</p>
     <div class="stop">
@@ -539,7 +650,7 @@
   </section>
 
   <footer>
-    <p><b>Last updated 10 September 2026.</b> This page is background information for creators working with WildGut. It is not medical advice.</p>
+    <p><b>Last updated 6 October 2026.</b> This page is background information for creators working with WildGut. It is not medical advice.</p>
     <p>Anyone on prescription medication, pregnant, breastfeeding, or managing a diagnosed condition should speak to their GP or pharmacist before adding a supplement.</p>
     <p>WildGut is a registered trading name of Alpine Ventures Limited.</p>
   </footer>
